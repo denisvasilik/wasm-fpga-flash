@@ -11,6 +11,8 @@ prepare:
 	patch tb/N25Q128A13E_VG12/code/N25Qxxx.v patches/0001-Fix-N25Qxxx-for-VHDL-simulation.patch
 	sed -i "s,include/,,g" tb/N25Q128A13E_VG12/include/DevParam.h
 	sed -i "s,include/,,g" tb/N25Q128A13E_VG12/include/Decoders.h
+	sed -i "s,mem_Q128_bottom.vmf,../../../../../resources/mem.vmf,g" tb/N25Q128A13E_VG12/include/UserData.h
+	sed -i "s,sfdp.vmf,../../../../../resources/sfdp.vmf,g" tb/N25Q128A13E_VG12/include/UserData.h
 
 hxs: fetch-definitions
 
@@ -25,7 +27,7 @@ clean:
 	@rm -rf .Xil vivado*.log vivado*.str vivado*.jou
 	@rm -rf work \
 		src-gen \
-		resources \
+		resources/n25q128a13e_3v_micronxip_vg12.tar.gz \
 		tb/N25Q128A13E_VG12
 
 install-from-test-pypi:

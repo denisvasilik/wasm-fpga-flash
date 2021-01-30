@@ -132,7 +132,6 @@ begin
             elsif( FlashSpiControllerState = FlashSpiControllerReadFromMemory0 ) then
                 if (FlashSpiControllerMemoryAddress /= FlashSpiControllerMemoryAddressEnd) then
                     AddrB <= std_logic_vector(FlashSpiControllerMemoryAddress);
-                    FlashSpiControllerMemoryAddress <= FlashSpiControllerMemoryAddress + 1;
                     FlashSpiControllerState <= FlashSpiControllerReadFromMemory1;
                 else
                     FlashSpiControllerState <= FlashSpiControllerWaitForRun0;
@@ -143,6 +142,7 @@ begin
                 FlashSpiControllerState <= FlashSpiControllerReadFromMemory3;
             elsif( FlashSpiControllerState = FlashSpiControllerReadFromMemory3 ) then
                 FlashSpiControllerState <= FlashSpiControllerReadFromMemory0;
+                FlashSpiControllerMemoryAddress <= FlashSpiControllerMemoryAddress + 1;
                 if (FlashSpiControllerMemoryAddress(1 downto 0) = "00") then
                     Data(7 downto 0) <= DoutB(7 downto 0);
                 elsif(FlashSpiControllerMemoryAddress(1 downto 0) = "01") then
