@@ -107,14 +107,15 @@ set files [list \
  "[file normalize "${project_tb}/tb_std_logic_1164_additions.vhd"]"\
  "[file normalize "${project_tb}/tb_Types.vhd"]"\
  "[file normalize "${project_tb}/tb_WbRam.vhd"]"\
- "[file normalize "${project_tb}/n25q128a/include/Decoders.h"]"\
- "[file normalize "${project_tb}/n25q128a/include/DevParam.h"]"\
- "[file normalize "${project_tb}/n25q128a/include/PLRSDetectors.h"]"\
- "[file normalize "${project_tb}/n25q128a/include/TimingData.h"]"\
- "[file normalize "${project_tb}/n25q128a/include/UserData.h"]"\
- "[file normalize "${project_tb}/n25q128a/top/StimTasks.v"]"\
- "[file normalize "${project_tb}/n25q128a/code/N25Qxxx.v"]"\
- "[file normalize "${project_tb}/n25q128a/top/ClockGenerator.v"]"\
+ "[file normalize "${project_tb}/N25Q128A13E_VG12/include/Decoders.h"]"\
+ "[file normalize "${project_tb}/N25Q128A13E_VG12/include/DevParam.h"]"\
+ "[file normalize "${project_tb}/N25Q128A13E_VG12/include/PLRSDetectors.h"]"\
+ "[file normalize "${project_tb}/N25Q128A13E_VG12/include/StackDecoder.h"]"\
+ "[file normalize "${project_tb}/N25Q128A13E_VG12/include/TimingData.h"]"\
+ "[file normalize "${project_tb}/N25Q128A13E_VG12/include/UserData.h"]"\
+ "[file normalize "${project_tb}/N25Q128A13E_VG12/top/StimTasks.v"]"\
+ "[file normalize "${project_tb}/N25Q128A13E_VG12/code/N25Qxxx.v"]"\
+ "[file normalize "${project_tb}/N25Q128A13E_VG12/top/ClockGenerator.v"]"\
 ]
 add_files -norecurse -fileset $obj $files
 
@@ -123,42 +124,47 @@ foreach i $files {
     set_property "file_type" "VHDL" $file_obj
 }
 
-set file "${project_tb}/n25q128a/include/Decoders.h"
+set file "${project_tb}/N25Q128A13E_VG12/include/Decoders.h"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property "file_type" "Verilog Header" $file_obj
 
-set file "${project_tb}/n25q128a/include/DevParam.h"
+set file "${project_tb}/N25Q128A13E_VG12/include/DevParam.h"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property "file_type" "Verilog Header" $file_obj
 
-set file "${project_tb}/n25q128a/include/PLRSDetectors.h"
+set file "${project_tb}/N25Q128A13E_VG12/include/PLRSDetectors.h"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property "file_type" "Verilog Header" $file_obj
 
-set file "${project_tb}/n25q128a/include/TimingData.h"
+set file "${project_tb}/N25Q128A13E_VG12/include/StackDecoder.h"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property "file_type" "Verilog Header" $file_obj
 
-set file "${project_tb}/n25q128a/include/UserData.h"
+set file "${project_tb}/N25Q128A13E_VG12/include/TimingData.h"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property "file_type" "Verilog Header" $file_obj
 
-set file "${project_tb}/n25q128a/top/StimTasks.v"
+set file "${project_tb}/N25Q128A13E_VG12/include/UserData.h"
+set file [file normalize $file]
+set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
+set_property "file_type" "Verilog Header" $file_obj
+
+set file "${project_tb}/N25Q128A13E_VG12/top/StimTasks.v"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property "file_type" "Verilog" $file_obj
 
-set file "${project_tb}/n25q128a/code/N25Qxxx.v"
+set file "${project_tb}/N25Q128A13E_VG12/code/N25Qxxx.v"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property "file_type" "Verilog" $file_obj
 
-set file "${project_tb}/n25q128a/top/ClockGenerator.v"
+set file "${project_tb}/N25Q128A13E_VG12/top/ClockGenerator.v"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sim_1] [list "*$file"]]
 set_property "file_type" "Verilog" $file_obj

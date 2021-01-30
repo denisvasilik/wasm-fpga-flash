@@ -50,9 +50,9 @@ architecture Behavioural of tb_WasmFpgaFlash is
     signal SpiFlash_SClk : std_logic;
     signal SpiFlash_CsNeg : std_logic;
 
-    constant HOLD_DQ3 : std_logic := '1';
-    constant Vpp_W_DQ2 : std_logic := '1';
-    constant Vcc : std_logic_vector(31 downto 0) := x"00000BB8";
+    signal HOLD_DQ3 : std_logic := '1';
+    signal Vpp_W_DQ2 : std_logic := '1';
+    signal Vcc : std_logic_vector(31 downto 0) := x"00000BB8";
 
 begin
 

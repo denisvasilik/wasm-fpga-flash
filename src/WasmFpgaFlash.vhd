@@ -38,7 +38,7 @@ architecture WasmFpgaFlashDefault of WasmFpgaFlash is
     signal FlashControllerDeviceAddressEnd : unsigned(23 downto 0);
     signal FlashControllerMemoryAddressEnd : unsigned(10 downto 0);
 
-    constant FlashControllerDataLength : unsigned(10 downto 0) := x"400"; -- 1024 Bytes Page Size
+    constant FlashControllerDataLength : unsigned(10 downto 0) := resize(x"400", 11); -- 1024 Bytes Page Size
 
     signal ModuleMemoryAddress : unsigned(23 downto 0);
 
