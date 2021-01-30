@@ -6,3 +6,4 @@ dist/
 *.egg-info/
 resources/*.tar.gz
 tb/N25Q128A13E_VG12
+src-gen
