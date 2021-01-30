@@ -4,5 +4,5 @@ ip/*
 !ip/*.xci
 dist/
 *.egg-info/
-tb/n25q128a
-tb/tb_qspi_n25q128a.v
+resources/*.tar.gz
+tb/N25Q128A13E_VG12
