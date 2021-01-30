@@ -1,2 +1,1 @@
-# wasm-fpga-flash
-WebAssembly FPGA Flash Loader
+# WebAssembly FPGA Flash

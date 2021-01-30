@@ -1,0 +1,8 @@
+hxs_gen
+work
+ip/*
+!ip/*.xci
+dist/
+*.egg-info/
+tb/n25q128a
+tb/tb_qspi_n25q128a.v
