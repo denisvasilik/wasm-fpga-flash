@@ -26,8 +26,8 @@ architecture WasmFpgaFlashDefault of WasmFpgaFlash is
 
     signal Rst : std_logic;
 
-    constant BootAddressPartitionSize : unsigned(23 downto 0) := x"000400"; -- 1kB
-    constant BootAddressPartition0 : unsigned(23 downto 0) := x"400000";
+    constant BootAddressPartitionSize : unsigned(23 downto 0) := x"001000"; -- 4kB
+    constant BootAddressPartition0 : unsigned(23 downto 0) := x"200000";
 
     signal FlashControllerData : std_logic_vector(31 downto 0);
     signal FlashControllerBusy : std_logic;
@@ -138,7 +138,7 @@ begin
                 State <= ReadFromSpiFlashMemory2;
             elsif( State = ReadFromSpiFlashMemory2 ) then
                 if( FlashControllerBusy = '0' ) then
-                    FlashControllerMemoryAddress <= FlashControllerMemoryAddress + 1;
+                    FlashControllerMemoryAddress <= FlashControllerMemoryAddress + 4;
                     State <= ReturnState;
                 end if;
             --

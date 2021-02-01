@@ -91,11 +91,22 @@ AB
 CD
 02
 
-@400000
+@200000
 AA
 BB
 CC
 DD
+
+@200FFA
+AA
+BB
+CC
+DD
+EE
+55
+
+@201000
+11
 
 //last memory locations
 @FFFFFA
