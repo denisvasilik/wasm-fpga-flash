@@ -91,13 +91,13 @@ AB
 CD
 02
 
-@200000
+@300000
 AA
 BB
 CC
 DD
 
-@200FFA
+@300FFA
 AA
 BB
 CC
@@ -105,7 +105,7 @@ DD
 EE
 55
 
-@201000
+@301000
 11
 
 //last memory locations
