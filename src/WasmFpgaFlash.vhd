@@ -27,7 +27,7 @@ architecture WasmFpgaFlashDefault of WasmFpgaFlash is
     signal Rst : std_logic;
 
     constant BootAddressPartitionSize : unsigned(23 downto 0) := x"001000"; -- 4kB
-    constant BootAddressPartition0 : unsigned(23 downto 0) := x"200000";
+    constant BootAddressPartition0 : unsigned(23 downto 0) := x"300000";
 
     signal FlashControllerData : std_logic_vector(31 downto 0);
     signal FlashControllerBusy : std_logic;
