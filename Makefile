@@ -14,6 +14,10 @@ prepare:
 	sed -i "s,mem_Q128_bottom.vmf,../../../../../resources/mem.vmf,g" tb/N25Q128A13E_VG12/include/UserData.h
 	sed -i "s,sfdp.vmf,../../../../../resources/sfdp.vmf,g" tb/N25Q128A13E_VG12/include/UserData.h
 
+fetch-definitions:
+	cp ../wasm-fpga-store/resources/wasm_fpga_store_header.vhd resources/
+	cp ../wasm-fpga-store/resources/wasm_fpga_store_wishbone.vhd resources/
+
 hxs: fetch-definitions
 
 
