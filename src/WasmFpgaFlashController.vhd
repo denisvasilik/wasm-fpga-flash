@@ -100,21 +100,21 @@ begin
         constant FlashSpiControllerExecuteCommandMemory0 : std_logic_vector(7 downto 0) := x"18";
         constant FlashSpiControllerError0 : std_logic_vector(7 downto 0) := x"FF";
     begin
-        if( Rst = '1' ) then
-            FlashSpiCommand <= (others => '0');
-            FlashSpiAddress <= (others => '0');
-            Data <= (others => '0');
-            WeB <= (others => '0');
-            AddrB <= (others => '0');
-            DinB <= (others => '0');
-            SpiControllerSequenceLength <= (others => '0');
-            SpiControllerRun <= '0';
-            Busy <= '1';
-            FlashSpiControllerReturnState <= (others => '0');
-            FlashSpiControllerReturnReturnState <= (others => '0');
-            FlashSpiControllerState <= FlashSpiControllerWaitForRun0;
-        elsif rising_edge(Clk) then
-            if( FlashSpiControllerState = FlashSpiControllerWaitForRun0 ) then
+        if rising_edge(Clk) then
+            if( Rst = '1' ) then
+                FlashSpiCommand <= (others => '0');
+                FlashSpiAddress <= (others => '0');
+                Data <= (others => '0');
+                WeB <= (others => '0');
+                AddrB <= (others => '0');
+                DinB <= (others => '0');
+                SpiControllerSequenceLength <= (others => '0');
+                SpiControllerRun <= '0';
+                Busy <= '1';
+                FlashSpiControllerReturnState <= (others => '0');
+                FlashSpiControllerReturnReturnState <= (others => '0');
+                FlashSpiControllerState <= FlashSpiControllerWaitForRun0;
+            elsif( FlashSpiControllerState = FlashSpiControllerWaitForRun0 ) then
                 Busy <= '0';
                 if( ReadFromDeviceRun = '1' ) then
                     Busy <= '1';
